@@ -27,6 +27,8 @@ Opciones:
 [4] Dividir
 [5] Teorema de Pitagoras
 [6] Ecuacion Cuadratica (o de segundo grado)
+[7] Potencia
+[8] Raiz Cuadrada
 		""")
 	try:
 		op = int(input("\nElige una opcion escribiendo su inciso, 0 para salir:\n>> "))
@@ -107,8 +109,25 @@ Opciones:
 			Z = int(input("c >> "))
 			print (Ecuacion_2Grado(X, Y, Z))
 			os.system("pause>nul")
+		
+		elif op == 7:
+			os.system("cls")
+			print ("== POTENCIA ==\n")
+			num1 = int(input("Ingrese un numero: "))
+			num2 = int(input("Ingrese el exponente: "))
+			resul = potencia(num1, num2)
+			print (str(num1)+" a la "+str(num2)+"es igual a:\n",resul)
+			input()
+		
+		elif op == 8:
+			os.system("cls")
+			print ("== RAIZ CUADRADA ==\n")
+			num1 = int(input("Ingrese un numero positivo: "))
+			resul = raizCuadrada(num1)
+			print ("La raiz cuadrada de "+str(num1)+" es: \n",resul)
+			input()
 		else: # En caso de que se ingrese un numero (opcion) que no hay.
-			print ("No hay opciones mas alla del #6, intenta con un numero menor a ese, ok?")
+			print ("No hay opciones mas alla del #8, intenta con un numero menor a ese, ok?")
 			os.system("pause>nul")
 	except ValueError: # En caso de que no se ingrese un numero.
 		print ("Ingresa un valor correcto.")
